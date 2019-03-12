@@ -115,6 +115,9 @@ class RouteStats:
             logger.error(err)
             return
 
+        if not body:
+            return
+
         try:
             in_data = json.loads(body)
         except ValueError as err:  # json.JSONDecodeError requires Python 3.5+
